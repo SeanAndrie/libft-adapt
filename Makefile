@@ -6,7 +6,7 @@
 #    By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 23:33:41 by sgadinga          #+#    #+#              #
-#    Updated: 2025/06/15 23:17:42 by sgadinga         ###   ########.fr        #
+#    Updated: 2025/08/13 17:23:38 by sgadinga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,18 @@ ARCHIVE = ar rcs
 
 SRC_DIR = src
 OBJ_DIR = obj
+INTERNALS_DIR = internals
 
-EXTRAS = ft_strtol.c
+STRTOL_UTILS = ft_strtol/ft_strtol_utils.c
+PRINTF_UTILS = $(addprefix ft_printf/, \
+				 ft_format_parsers.c ft_format_spec.c ft_format_utils.c \
+				 ft_print_char.c ft_print_dec_int.c ft_print_hex.c \
+				 ft_print_str.c ft_print_uint.c)
+GNL_UTILS = get_next_line/get_next_line_utils.c
+
+SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
+					$(STRTOL_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
+
 SRCS = $(addprefix $(SRC_DIR)/, \
 		 ft_isalpha.c ft_isdigit.c ft_islower.c ft_isupper.c ft_isspace.c \
 		 ft_isprint.c ft_isascii.c ft_itoa.c ft_atoi.c ft_bzero.c ft_calloc.c \
@@ -28,13 +38,13 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 		 ft_strdup.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c \
 		 ft_strjoin.c ft_strmapi.c ft_striteri.c ft_lstnew.c ft_lstadd_front.c \
 		 ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-		 ft_lstiter.c ft_lstmap.c $(EXTRAS))
+		 ft_lstiter.c ft_lstmap.c $(SRC_W_INTERNALS))
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@	
 
 $(NAME): $(OBJS)

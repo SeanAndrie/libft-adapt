@@ -5,57 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 23:39:15 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/06/15 23:40:07 by sgadinga         ###   ########.fr       */
+/*   Created: 2025/08/13 15:30:41 by sgadinga          #+#    #+#             */
+/*   Updated: 2025/08/13 16:30:01 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include "internals/ft_strtol/ft_strtol.h"
 
-/*
-
-- skip whitespaces
-- can have '-' or '+'
-
-bases:
-	- if base is 0 or 16
-		- str can include "0x" or "0X" prefix
-		- read in base 16
-	- if base is 0 or 2
-		- str can include "0b" or "0B" prefix
-		- read in base 2
-	- if base 0
-		- read in base 2,
-		- unless following char in str is '0', read in base 8
-
-*/
-
-static int get_base(const char **nptr, int base)
+static inline void set_endptr(char **endptr, const char *pos)
 {
-    
+	if (endptr)
+		*endptr = (char *)pos;
 }
 
 long	ft_strtol(const char *nptr, char **endptr, int base)
 {
 	long	res;
 	int		sign;
+	int		digit;
+	long	overflow;
 
-    (void)endptr;
-	res = 0;
-	sign = 1;
-	while (*nptr && ft_isspace(*nptr))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
+	if (!nptr || !*nptr)
+		return (set_endptr(endptr, nptr), 0);
+	skip_whitespace_and_sign(&nptr, &sign);
+	if (base != 0 && (base < 2 || base > 36))
+		return (set_endptr(endptr, nptr), errno = EINVAL, 0);
+	base = handle_base_prefix(&nptr, base);
+	while (1)
 	{
-		if (*nptr == '-')
-			sign = -1;
+		digit = convert_to_value(*nptr, base);
+		if (digit == -1)
+			break;
+		overflow = check_overflow(res, digit, base, sign);
+		if (overflow)
+			return (set_endptr(endptr, nptr), errno = ERANGE, overflow);
+		res = res * base + digit;
 		nptr++;
 	}
-    base = get_base(&nptr, base);
-    printf("Base: %d\n", base);
-    while (1)
-    {
-        
-    }
-    return (res * sign);
+	set_endptr(endptr, nptr);
+	return (res * sign);
 }

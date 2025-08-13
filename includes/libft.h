@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/06/15 23:18:28 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:58:59 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -31,7 +30,9 @@ int					ft_isupper(int c);
 int					ft_islower(int c);
 int					ft_isspace(int c);
 int					ft_isprint(int c);
+int					ft_tolower(int c);
 int					ft_atoi(const char *s);
+int					ft_printf(const char *format, ...);
 
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);
