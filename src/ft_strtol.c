@@ -6,14 +6,14 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 15:30:41 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 16:30:01 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 20:28:33 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include "internals/ft_strtol/ft_strtol.h"
 
-static inline void set_endptr(char **endptr, const char *pos)
+static inline void	set_endptr(char **endptr, const char *pos)
 {
 	if (endptr)
 		*endptr = (char *)pos;
@@ -26,6 +26,7 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 	int		digit;
 	long	overflow;
 
+	res = 0;
 	if (!nptr || !*nptr)
 		return (set_endptr(endptr, nptr), 0);
 	skip_whitespace_and_sign(&nptr, &sign);
@@ -36,7 +37,7 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 	{
 		digit = convert_to_value(*nptr, base);
 		if (digit == -1)
-			break;
+			break ;
 		overflow = check_overflow(res, digit, base, sign);
 		if (overflow)
 			return (set_endptr(endptr, nptr), errno = ERANGE, overflow);
