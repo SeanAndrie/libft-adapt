@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:43:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 20:13:39 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 21:14:28 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <libft.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 # if defined(__linux__)
 #  define NULLPTR "(nil)"

@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:48:31 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 20:14:26 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 21:06:12 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_parse_flags(const char **format, t_formatspec *fs)
 	{
 		if (!ft_strchr(fs->flags, **format))
 			fs->flags[i++] = **format;
-		printf("%c", **format);
 		(*format)++;
 	}
 	fs->flags[i] = '\0';
