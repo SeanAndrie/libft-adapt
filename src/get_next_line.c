@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:11:37 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:30:17 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 19:08:21 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ static void	read_line(t_node **head, int fd)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*remain[MAX_FD];
+	static t_node	*remain[MAX_FD];
 	char			*line;
 
 	if (fd < 0 || fd >= MAX_FD || BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX)
