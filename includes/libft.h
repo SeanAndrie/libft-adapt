@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 17:21:30 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 22:52:10 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# define STDIN_FILENO 0
+# define STDOUT_FILENO 1
+# define STDERR_FILENO 2
 
 typedef struct s_list
 {
@@ -31,8 +36,12 @@ int					ft_islower(int c);
 int					ft_isspace(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
+
 int					ft_atoi(const char *s);
+long				ft_strtol(const char *nptr, char **endptr, int base);
+
 int					ft_printf(const char *format, ...);
+int					ft_dprintf(int fd, const char *format, ...);
 
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);
@@ -40,6 +49,7 @@ char				*ft_strchr(const char *s, int c);
 char				**ft_split(const char *s, int c);
 char				*ft_strtrim(const char *s, const char *set);
 char				*ft_strjoin(const char *s1, const char *s2);
+char				*ft_vstrjoin(unsigned int n, char *sep, ...);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_substr(const char *s, unsigned int start, size_t len);
@@ -71,7 +81,5 @@ void                ft_lstadd_front(t_list **lst, t_list *new);
 void                ft_lstadd_back(t_list **lst, t_list *new);
 void                ft_lstdelone(t_list *lst, void (*del)(void *));
 void                ft_lstclear(t_list **lst, void (*del)(void *));
-
-long				ft_strtol(const char *nptr, char **endptr, int base);
 
 #endif
