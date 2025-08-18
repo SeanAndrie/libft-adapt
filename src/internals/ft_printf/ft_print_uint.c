@@ -6,20 +6,20 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:55:06 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:05:29 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 18:57:49 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putuint_len(unsigned int n)
+static int	ft_putuint_len(unsigned int n, int fd)
 {
 	int	len;
 
 	len = 0;
 	if (n / 10 > 0)
-		len += ft_putuint_len(n / 10);
-	len += ft_putchar_len(n % 10 + '0');
+		len += ft_putuint_len(n / 10, fd);
+	len += ft_putchar_fd(n % 10 + '0', fd);
 	return (len);
 }
 
@@ -51,11 +51,11 @@ int	ft_parse_uint(t_formatspec *fs, unsigned int n)
 		total_len += (fs->precision - n_digits);
 	len += ft_right_justify(fs, &total_len);
 	if (fs->precision > n_digits)
-		len += ft_width_padding(fs->precision, n_digits, '0');
+		len += ft_width_padding(fs->precision, n_digits, '0', fs->fd);
 	if (!(n == 0 && fs->precision == 0))
-		len += ft_putuint_len(n);
+		len += ft_putuint_len(n, fs->fd);
 	else if (fs->precision == 0 && fs->width > 0)
-		len += ft_putchar_len(' ');
+		len += ft_putchar_fd(' ', fs->fd);
 	len += ft_left_justify(fs, &len);
 	return (len);
 }

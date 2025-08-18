@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 16:58:59 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:21:30 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
+int					ft_putnbr_fd(int n, int fd);
+int					ft_putchar_fd(char c, int fd);
+int					ft_putstr_fd(char *s, int fd);
+int					ft_putendl_fd(char *s, int fd);
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);

@@ -6,26 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:54:11 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:05:06 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 18:30:49 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	ft_putdi_len(int n)
-{
-	int	len;
-
-	len = 0;
-	if (n == -2147483648)
-		return (ft_putstr_len("2147483648"));
-	if (n < 0)
-		n = -n;
-	if (n / 10 > 0)
-		len += ft_putdi_len(n / 10);
-	len += ft_putchar_len(n % 10 + '0');
-	return (len);
-}
 
 static int	ft_count_digits_signed(int n)
 {
@@ -47,11 +32,11 @@ static int	ft_count_digits_signed(int n)
 static int	ft_apply_sign(t_formatspec *fs, int n)
 {
 	if (n < 0)
-		return (ft_putchar_len('-'));
+		return (ft_putchar_fd('-', fs->fd));
 	else if (ft_strchr(fs->flags, '+'))
-		return (ft_putchar_len('+'));
+		return (ft_putchar_fd('+', fs->fd));
 	else if (ft_strchr(fs->flags, ' ') && n >= 0)
-		return (ft_putchar_len(' '));
+		return (ft_putchar_fd(' ', fs->fd));
 	return (0);
 }
 
@@ -65,7 +50,7 @@ static int	ft_pad_and_justify(t_formatspec *fs, int n, int n_digits,
 			'-'))
 	{
 		len += ft_apply_sign(fs, n);
-		len += ft_width_padding(fs->width, total_len, '0');
+		len += ft_width_padding(fs->width, total_len, '0', fs->fd);
 	}
 	else
 	{
@@ -73,11 +58,14 @@ static int	ft_pad_and_justify(t_formatspec *fs, int n, int n_digits,
 		len += ft_apply_sign(fs, n);
 	}
 	if (fs->precision > n_digits)
-		len += ft_width_padding(fs->precision, n_digits, '0');
+		len += ft_width_padding(fs->precision, n_digits, '0', fs->fd);
 	if (!(n == 0 && fs->precision == 0))
-		len += ft_putdi_len(n);
+	{
+		n = -n;
+		len += ft_putnbr_fd(n, fs->fd);		
+	}
 	else if (fs->precision == 0 && fs->width > 0)
-		len += ft_putchar_len(' ');
+		len += ft_putchar_fd(' ', fs->fd);
 	len += ft_left_justify(fs, &total_len);
 	return (len);
 }
@@ -89,7 +77,7 @@ int	ft_parse_dec_int(t_formatspec *fs, int n)
 	int	total_len;
 
 	if (n == INT_MIN)
-		return (ft_putstr_len("-2147483648"));
+		return (ft_putstr_fd("-2147483648", fs->fd));
 	len = 0;
 	n_digits = ft_count_digits_signed(n);
 	total_len = n_digits;

@@ -6,19 +6,19 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:49:47 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:04:50 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 18:28:59 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_width_padding(int width, int length, int value)
+int	ft_width_padding(int width, int length, int value, int fd)
 {
 	int	len;
 
 	len = 0;
 	while (width-- > length)
-		len += ft_putchar_len(value);
+		len += ft_putchar_fd(value, fd);
 	return (len);
 }
 
@@ -30,9 +30,9 @@ int	ft_right_justify(t_formatspec *fs, int *total_len)
 	if (fs->width > *total_len && !ft_strchr(fs->flags, '-'))
 	{
 		if (ft_strchr(fs->flags, '0') && fs->precision < 0)
-			len += ft_width_padding(fs->width, *total_len, '0');
+			len += ft_width_padding(fs->width, *total_len, '0', fs->fd);
 		else
-			len += ft_width_padding(fs->width, *total_len, ' ');
+			len += ft_width_padding(fs->width, *total_len, ' ', fs->fd);
 	}
 	return (len);
 }
@@ -43,7 +43,7 @@ int	ft_left_justify(t_formatspec *fs, int *total_len)
 
 	len = 0;
 	if (fs->width > *total_len && ft_strchr(fs->flags, '-'))
-		len += ft_width_padding(fs->width, *total_len, ' ');
+		len += ft_width_padding(fs->width, *total_len, ' ', fs->fd);
 	return (len);
 }
 

@@ -6,22 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:52:51 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:05:23 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 18:30:16 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_putstr_len(char *s)
-{
-	int	s_len;
-
-	if (!s)
-		s = "(null)";
-	s_len = (int)ft_strlen(s);
-	write(1, s, s_len);
-	return (s_len);
-}
 
 int	ft_parse_str(t_formatspec *fs, char *s)
 {
@@ -43,10 +32,10 @@ int	ft_parse_str(t_formatspec *fs, char *s)
 		n_char = str_len;
 	len = 0;
 	if (fs->width > n_char && !ft_strchr(fs->flags, '-'))
-		len += ft_width_padding(fs->width, n_char, ' ');
-	write(1, s, n_char);
+		len += ft_width_padding(fs->width, n_char, ' ', fs->fd);
+	write(fs->fd, s, n_char);
 	len += n_char;
 	if (fs->width > n_char && ft_strchr(fs->flags, '-'))
-		len += ft_width_padding(fs->width, n_char, ' ');
+		len += ft_width_padding(fs->width, n_char, ' ', fs->fd);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:43:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 16:45:03 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 19:46:47 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 typedef struct s_formatspec
 {
+	int			fd;
 	char		flags[6];
 	int			width;
 	int			precision;
@@ -46,7 +47,7 @@ int				ft_parse_specifier(const char **format, t_formatspec *fs);
 void			ft_remove_flag(t_formatspec *fs, char flag);
 
 // ft_format_utils
-int				ft_width_padding(int width, int len, int value);
+int				ft_width_padding(int width, int len, int value, int fd);
 int				ft_right_justify(t_formatspec *fs, int *total_len);
 int				ft_left_justify(t_formatspec *fs, int *total_len);
 void			ft_set_hex_n(t_formatspec *fs, void *ptr, unsigned long *n);
@@ -54,11 +55,9 @@ void			ft_set_hex_str(t_formatspec *fs, char **hex_res,
 					unsigned long n);
 
 // ft_print_char
-int				ft_putchar_len(int c);
 int				ft_parse_char(t_formatspec *fs, int c);
 
 // ft_print_str
-int				ft_putstr_len(char *s);
 int				ft_parse_str(t_formatspec *fs, char *s);
 
 // ft_print_dec_int

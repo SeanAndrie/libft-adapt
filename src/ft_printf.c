@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:57:00 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 16:57:47 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 19:45:28 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ static int	ft_parse_by_spec(t_formatspec *fs, va_list args)
 		len = ft_parse_uint(fs, va_arg(args, unsigned int));
 	else if (fs->specifier == 'x' || fs->specifier == 'X')
 		len = ft_parse_hex(fs, va_arg(args, void *));
-	else if (fs->specifier == '%')
-		len = ft_putchar_len('%');
 	else
-		len = ft_putchar_len(fs->specifier);
+		len = ft_putchar_fd(fs->specifier, fs->fd);
 	return (len);
 }
 
@@ -51,14 +49,14 @@ static int	ft_parse_format(const char *format, va_list args)
 			fs = ft_create_fs(&format);
 			if (!fs)
 			{
-				len += ft_putchar_len('%');
+				len += ft_putchar_fd('%', fs->fd);
 				continue ;
 			}
 			len += ft_parse_by_spec(fs, args);
 			free(fs);
 		}
 		else
-			len += ft_putchar_len(*format);
+			len += ft_putchar_fd(*format, fs->fd);
 		format++;
 	}
 	return (len);

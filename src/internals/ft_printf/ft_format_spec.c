@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:46:31 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:04:34 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:24:27 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static t_formatspec	*ft_init_fs(void)
 	fs->width = 0;
 	fs->precision = -1;
 	fs->specifier = '\0';
+	fs->fd = STDOUT_FILENO;
 	ft_bzero(&fs->flags, 5);
 	return (fs);
 }

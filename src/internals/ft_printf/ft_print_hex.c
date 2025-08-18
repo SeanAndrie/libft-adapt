@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:56:14 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:05:11 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/15 18:58:00 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static int	ft_apply_prefix(t_formatspec *fs, unsigned long n)
 	if ((fs->specifier == 'p' || ft_strchr(fs->flags, '#')) && n != 0)
 	{
 		if (fs->specifier == 'p' || fs->specifier == 'x')
-			len += ft_putstr_len("0x");
+			len += ft_putstr_fd("0x", fs->fd);
 		else if (fs->specifier == 'X')
-			len += ft_putstr_len("0X");
+			len += ft_putstr_fd("0X", fs->fd);
 	}
 	return (len);
 }
@@ -69,7 +69,7 @@ static int	ft_pad_and_justify(t_formatspec *fs, unsigned long n, int n_char,
 	if (n != 0 || fs->specifier == 'p')
 		len += ft_apply_prefix(fs, n);
 	if (fs->precision > n_char)
-		len += ft_width_padding(fs->precision, n_char, '0');
+		len += ft_width_padding(fs->precision, n_char, '0', fs->fd);
 	return (len);
 }
 
@@ -92,9 +92,9 @@ int	ft_parse_hex(t_formatspec *fs, void *ptr)
 		total_len += 2;
 	len += ft_pad_and_justify(fs, n, n_char, total_len);
 	if (!(n == 0 && fs->precision == 0))
-		len += ft_putstr_len(hex_str);
+		len += ft_putstr_fd(hex_str, fs->fd);
 	else if (fs->precision == 0 && fs->width > 0)
-		len += ft_putchar_len(' ');
+		len += ft_putchar_fd(' ', fs->fd);
 	if (fs->specifier == 'p' && n == 0)
 		total_len = ft_strlen(NULLPTR);
 	len += ft_left_justify(fs, &total_len);
