@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:52:51 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/15 18:30:16 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 19:02:37 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ int	ft_parse_str(t_formatspec *fs, char *s)
 	len = 0;
 	if (fs->width > n_char && !ft_strchr(fs->flags, '-'))
 		len += ft_width_padding(fs->width, n_char, ' ', fs->fd);
-	write(fs->fd, s, n_char);
-	len += n_char;
+	len += write(fs->fd, s, n_char);
 	if (fs->width > n_char && ft_strchr(fs->flags, '-'))
 		len += ft_width_padding(fs->width, n_char, ' ', fs->fd);
 	return (len);

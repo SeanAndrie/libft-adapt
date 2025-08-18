@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:48:31 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:04:17 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 20:14:26 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	ft_parse_flags(const char **format, t_formatspec *fs)
 {
-	int	flag_i;
+	int i;
 
-	flag_i = 0;
-	while (ft_isflag(**format) && flag_i < 5)
+	i = 0;
+	while (ft_isflag(**format) && i < 5)
 	{
 		if (!ft_strchr(fs->flags, **format))
-			fs->flags[flag_i++] = **format;
+			fs->flags[i++] = **format;
+		printf("%c", **format);
 		(*format)++;
 	}
-	fs->flags[flag_i] = '\0';
+	fs->flags[i] = '\0';
 }
+
 
 void	ft_parse_width(const char **format, t_formatspec *fs)
 {

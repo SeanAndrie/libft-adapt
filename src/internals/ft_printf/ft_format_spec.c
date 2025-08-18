@@ -6,36 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:46:31 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 17:24:27 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 20:14:40 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	ft_apply_flag_precedence(t_formatspec *fs)
-{
-	if (ft_strchr(fs->flags, '-'))
-		ft_remove_flag(fs, '0');
-	if (ft_strchr(fs->flags, '+'))
-		ft_remove_flag(fs, ' ');
-	if (fs->precision >= 0 && ft_strchr("diuxX", fs->specifier))
-		ft_remove_flag(fs, '0');
-}
-
-static t_formatspec	*ft_init_fs(void)
-{
-	t_formatspec	*fs;
-
-	fs = malloc(sizeof(t_formatspec));
-	if (!fs)
-		return (NULL);
-	fs->width = 0;
-	fs->precision = -1;
-	fs->specifier = '\0';
-	fs->fd = STDOUT_FILENO;
-	ft_bzero(&fs->flags, 5);
-	return (fs);
-}
 
 int	ft_isflag(int c)
 {
@@ -48,11 +23,35 @@ int	ft_isspec(int c)
 		|| c == 'x' || c == 'X' || c == '%');
 }
 
-t_formatspec	*ft_create_fs(const char **format)
+static void	ft_apply_flag_precedence(t_formatspec *fs)
+{
+	if (ft_strchr(fs->flags, '-'))
+		ft_remove_flag(fs, '0');
+	if (ft_strchr(fs->flags, '+'))
+		ft_remove_flag(fs, ' ');
+	if (fs->precision >= 0 && ft_strchr("diuxX", fs->specifier))
+		ft_remove_flag(fs, '0');
+}
+
+static t_formatspec	*ft_init_fs(int fd)
 {
 	t_formatspec	*fs;
 
-	fs = ft_init_fs();
+	fs = ft_calloc(1, sizeof(t_formatspec));
+	if (!fs)
+		return (NULL);
+	fs->precision = -1;
+	fs->fd = fd;
+	return (fs);
+}
+
+t_formatspec	*ft_create_fs(const char **format, int fd)
+{
+	t_formatspec	*fs;
+
+	if (fd < 0)
+		return (NULL);
+	fs = ft_init_fs(fd);
 	if (!fs)
 		return (NULL);
 	if (!format || !*format || **format == '\0')

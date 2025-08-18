@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:43:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/15 19:46:47 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/08/18 20:13:39 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <libft.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 # if defined(__linux__)
 #  define NULLPTR "(nil)"
@@ -37,7 +38,7 @@ typedef struct s_formatspec
 // ft_format_spec
 int				ft_isflag(int c);
 int				ft_isspec(int c);
-t_formatspec	*ft_create_fs(const char **format);
+t_formatspec	*ft_create_fs(const char **format, int fd);
 
 // ft_format_parsers
 void			ft_parse_flags(const char **format, t_formatspec *fs);
