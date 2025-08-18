@@ -29,7 +29,7 @@ GNL_UTILS = get_next_line/get_next_line_utils.c
 SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
 					$(STRTOL_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
 
-NON_LIBFT_FUNS = ft_strtol.c ft_printf.c get_next_line.c
+NON_LIBFT_FUNCS = ft_strtol.c ft_printf.c get_next_line.c
 
 SRCS = $(addprefix $(SRC_DIR)/, \
 		 ft_isalpha.c ft_isdigit.c ft_islower.c ft_isupper.c ft_isspace.c \
@@ -40,7 +40,7 @@ SRCS = $(addprefix $(SRC_DIR)/, \
 		 ft_strdup.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c ft_tolower.c \
 		 ft_strjoin.c ft_strmapi.c ft_striteri.c ft_lstnew.c ft_lstadd_front.c \
 		 ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-		 ft_lstiter.c ft_lstmap.c $(NON_LIBFT_FUNS) $(SRC_W_INTERNALS))
+		 ft_lstiter.c ft_lstmap.c $(NON_LIBFT_FUNCS) $(SRC_W_INTERNALS))
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
