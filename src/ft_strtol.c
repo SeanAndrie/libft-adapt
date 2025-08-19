@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include "internals/ft_strtol/ft_strtol.h"
+#include <libft.h>
 
 static inline void	set_endptr(char **endptr, const char *pos)
 {

@@ -14,9 +14,9 @@
 
 int	ft_putendl_fd(char *s, int fd)
 {
-	int s_len;
-	int nl_len;
-	
+	int	s_len;
+	int	nl_len;
+
 	s_len = ft_putstr_fd(s, fd);
 	if (s_len == -1)
 		return (-1);

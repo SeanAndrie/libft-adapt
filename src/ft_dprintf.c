@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include "internals/ft_printf/ft_printf.h"
+#include <libft.h>
 
-int ft_dprintf(int fd, const char *format, ...)
+int	ft_dprintf(int fd, const char *format, ...)
 {
-    int len;
-    va_list args;
+	int		len;
+	va_list	args;
 
-    if (fd < 0)
-        return (-1);
-    len = 0;
-    va_start(args, format);
-    len = ft_parse_format(format, fd, args);
-    va_end(args);
-    return (len);
+	if (fd < 0)
+		return (-1);
+	len = 0;
+	va_start(args, format);
+	len = ft_parse_format(format, fd, args);
+	va_end(args);
+	return (len);
 }

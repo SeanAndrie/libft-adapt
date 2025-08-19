@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int ft_parse_by_spec(t_formatspec *fs, va_list args)
+static int	ft_parse_by_spec(t_formatspec *fs, va_list args)
 {
 	int	len;
 

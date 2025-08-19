@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-static	int in_set(const char *set, int c)
+static int	in_set(const char *set, int c)
 {
 	while (*set)
 	{
@@ -26,8 +26,8 @@ static	int in_set(const char *set, int c)
 char	*ft_strtrim(const char *s, const char *set)
 {
 	char		*trimmed;
-	const char 	*start;
-	const char 	*end;
+	const char	*start;
+	const char	*end;
 	size_t		len;
 
 	if (!s)

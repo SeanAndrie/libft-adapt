@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include "internals/get_next_line/get_next_line.h"
+#include <libft.h>
 
 static char	*alloc_line(t_node **head)
 {

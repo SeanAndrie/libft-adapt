@@ -13,12 +13,12 @@
 #ifndef FT_STRTOL_H
 # define FT_STRTOL_H
 
-# include <libft.h>
 # include <errno.h>
+# include <libft.h>
 
-void    skip_whitespace_and_sign(const char **nptr, int *sign);
-int     handle_base_prefix(const char **nptr, int base);
-int     convert_to_value(char c, int base);
-long    check_overflow(long res, int digit, int base, int sign);
+void	skip_whitespace_and_sign(const char **nptr, int *sign);
+int		handle_base_prefix(const char **nptr, int base);
+int		convert_to_value(char c, int base);
+long	check_overflow(long res, int digit, int base, int sign);
 
 #endif

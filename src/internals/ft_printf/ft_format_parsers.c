@@ -14,7 +14,7 @@
 
 void	ft_parse_flags(const char **format, t_formatspec *fs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (ft_isflag(**format) && i < 5)
@@ -25,7 +25,6 @@ void	ft_parse_flags(const char **format, t_formatspec *fs)
 	}
 	fs->flags[i] = '\0';
 }
-
 
 void	ft_parse_width(const char **format, t_formatspec *fs)
 {
