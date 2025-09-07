@@ -6,7 +6,7 @@
 #    By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 23:33:41 by sgadinga          #+#    #+#              #
-#    Updated: 2025/08/18 23:05:05 by sgadinga         ###   ########.fr        #
+#    Updated: 2025/09/07 01:12:40 by sgadinga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
 NON_LIBFT_FUNCS = ft_strtol.c ft_printf.c ft_dprintf.c get_next_line.c ft_vstrjoin.c ft_tolower.c
 
 SRCS = $(addprefix $(SRC_DIR)/, \
-		 ft_isalpha.c ft_isdigit.c ft_islower.c ft_isupper.c ft_isspace.c \
+		 ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_islower.c ft_isupper.c ft_isspace.c \
 		 ft_isprint.c ft_isascii.c ft_itoa.c ft_atoi.c ft_bzero.c ft_calloc.c \
 		 ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
 		 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \

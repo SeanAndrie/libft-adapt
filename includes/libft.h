@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 22:52:10 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/07 01:12:13 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_list
 
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
+int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isupper(int c);
 int					ft_islower(int c);
