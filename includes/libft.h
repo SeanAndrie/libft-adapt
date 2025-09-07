@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/07 01:12:13 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/07 13:17:50 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int					ft_isprint(int c);
 int					ft_tolower(int c);
 
 int					ft_atoi(const char *s);
+int 				ft_count_char(const char *str, char c);
 long				ft_strtol(const char *nptr, char **endptr, int base);
 
 int					ft_printf(const char *format, ...);
