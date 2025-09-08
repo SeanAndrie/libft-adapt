@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/07 13:17:50 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/07 23:39:34 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ int 				ft_count_char(const char *str, char c);
 long				ft_strtol(const char *nptr, char **endptr, int base);
 
 int					ft_printf(const char *format, ...);
+int					ft_vprintf(const char *format, va_list ap);
 int					ft_dprintf(int fd, const char *format, ...);
+int					ft_vdprintf(int fd, const char *format, va_list ap);
 
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);
