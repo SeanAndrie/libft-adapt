@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
+/*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/07 23:39:34 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/08 17:52:32 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

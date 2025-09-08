@@ -5,84 +5,86 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 16:41:11 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/06/06 23:05:12 by sgadinga         ###   ########.fr       */
+/*   Created: 2024/12/17 17:16:51 by sgadinga          #+#    #+#             */
+/*   Updated: 2025/09/08 17:52:38 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-static size_t	count_words(const char *s, char c)
+static int	count_words(const char *s, char c)
 {
-	int		in_word;
-	size_t	n_words;
+	int	count;
+	int	in_word;
 
+	count = 0;
 	in_word = 0;
-	n_words = 0;
-	while (*s)
+	while (*s != '\0')
 	{
-		if (*s != c && !in_word)
+		if (*s != c && in_word == 0)
 		{
+			count++;
 			in_word = 1;
-			n_words++;
 		}
 		else if (*s == c)
 			in_word = 0;
 		s++;
 	}
-	return (n_words);
+	return (count);
 }
 
-static char	*alloc_word(const char **s, int c)
+static char	*alloc_word(const char **s, char c)
 {
+	const char	*start;
 	size_t		len;
 	char		*word;
-	const char	*temp;
 
+	len = 0;
 	while (**s && **s == c)
 		(*s)++;
-	len = 0;
-	temp = *s;
+	start = *s;
 	while (**s && **s != c)
 	{
-		s++;
+		(*s)++;
 		len++;
 	}
-	word = malloc(sizeof(char) * (len + 1));
+	word = ft_calloc(len + 1, sizeof(char));
 	if (!word)
 		return (NULL);
-	ft_strlcpy(word, temp, len + 1);
+	ft_strlcpy(word, start, len + 1);
 	return (word);
 }
 
-static void	*free_tokens(char **tokens, size_t i)
+static void	*free_splits(char **splits, int i)
 {
-	while (--i > 0)
-		free(tokens[i]);
-	free(tokens);
+	while (--i >= 0)
+		free(splits[i]);
+	free(splits);
 	return (NULL);
 }
 
 char	**ft_split(const char *s, int c)
 {
+	char	**splits;
 	size_t	i;
-	char	**tokens;
 
-	tokens = ft_calloc(count_words(s, c) + 1, sizeof(char));
-	if (!tokens)
+	if (!s)
+		return (NULL);
+	splits = ft_calloc(count_words(s, c) + 1, sizeof(char *));
+	if (!splits)
 		return (NULL);
 	i = 0;
 	while (*s)
 	{
-		if (*s && ft_isspace(*s))
+		while (*s && *s == c)
 			s++;
-		else
+		if (*s != '\0')
 		{
-			tokens[i] = alloc_word(&s, c);
-			if (!tokens[i])
-				return (free_tokens(tokens, i));
+			splits[i] = alloc_word(&s, c);
+			if (!splits[i])
+				return (free_splits(splits, i));
 			i++;
 		}
 	}
-	return (tokens);
+	return (splits);
 }
