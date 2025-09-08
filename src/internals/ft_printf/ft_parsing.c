@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 21:20:22 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 21:34:01 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/07 23:26:11 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_parse_by_spec(t_formatspec *fs, va_list args)
 	return (len);
 }
 
-int	ft_parse_format(const char *format, int fd, va_list args)
+int	ft_parse_format(int fd, const char *format, va_list args)
 {
 	int				len;
 	t_formatspec	*fs;

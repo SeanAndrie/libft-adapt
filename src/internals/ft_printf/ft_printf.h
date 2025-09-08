@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:43:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 22:02:33 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/07 23:26:38 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_formatspec
 }				t_formatspec;
 
 // ft_parsing
-int				ft_parse_format(const char *format, int fd, va_list args);
+int				ft_parse_format(int fd, const char *format, va_list args);
 
 // ft_format_spec
 int				ft_isflag(int c);
