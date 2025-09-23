@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/08 17:52:32 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/23 18:20:43 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char				*ft_vstrjoin(unsigned int n, char *sep, ...);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_substr(const char *s, unsigned int start, size_t len);
+char				*ft_substr_range(const char *s, size_t start, size_t end);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
