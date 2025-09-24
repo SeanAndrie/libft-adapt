@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 21:49:51 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/17 12:54:41 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/25 00:01:50 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ static size_t	get_total_len(unsigned int n, char *sep, va_list args)
 	char	*str;
 
 	i = 0;
+	sep_len = 1;
 	total_len = 0;
-	sep_len = ft_strlen(sep);
+	if (sep)
+		sep_len = ft_strlen(sep);
 	while (i < n)
 	{
 		str = va_arg(args, char *);
