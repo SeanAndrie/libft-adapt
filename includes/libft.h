@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
+/*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/23 18:20:43 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/09/25 14:48:59 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 # define STDIN_FILENO 0
 # define STDOUT_FILENO 1
 # define STDERR_FILENO 2
+
+typedef enum e_error_type
+{
+	ERROR_SYNTAX,
+	ERROR_RUNTIME
+}		t_error_type;
 
 typedef struct s_list
 {
@@ -46,6 +52,7 @@ int					ft_printf(const char *format, ...);
 int					ft_vprintf(const char *format, va_list ap);
 int					ft_dprintf(int fd, const char *format, ...);
 int					ft_vdprintf(int fd, const char *format, va_list ap);
+void				log_error(t_error_type type, const char *format, ...);
 
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);
