@@ -12,11 +12,13 @@
 
 #include <libft.h>
 
-void	log_error(t_error_type type, const char *format, ...)
+void	log_error(t_error_type type, const char *base, const char *format, ...)
 {
 	va_list	args;
 
 	va_start(args, format);
+  if (base)
+      ft_dprintf(STDERR_FILENO, "%s: ", base);
 	if (type == ERROR_SYNTAX)
 		ft_dprintf(STDERR_FILENO, "syntax error: ");
 	else

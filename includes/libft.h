@@ -52,7 +52,7 @@ int					ft_printf(const char *format, ...);
 int					ft_vprintf(const char *format, va_list ap);
 int					ft_dprintf(int fd, const char *format, ...);
 int					ft_vdprintf(int fd, const char *format, va_list ap);
-void				log_error(t_error_type type, const char *format, ...);
+void				log_error(t_error_type type, const char *base, const char *format, ...);
 
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);
