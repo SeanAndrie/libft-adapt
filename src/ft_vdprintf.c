@@ -13,12 +13,12 @@
 #include "internals/ft_printf/ft_printf.h"
 #include <libft.h>
 
-int ft_vdprintf(int fd, const char *format, va_list ap)
+int	ft_vdprintf(int fd, const char *format, va_list ap)
 {
-    int len;
+	int	len;
 
 	if (fd < 0)
 		return (-1);
-    len = ft_parse_format(fd, format, ap);
-    return (len);
+	len = ft_parse_format(fd, format, ap);
+	return (len);
 }

@@ -12,21 +12,21 @@
 
 #include <libft.h>
 
-char    *ft_substr_range(const char *s, size_t start, size_t end)
+char	*ft_substr_range(const char *s, size_t start, size_t end)
 {
-    size_t  i;
-    size_t  len;
-    char    *sub;
+	size_t	i;
+	size_t	len;
+	char	*sub;
 
-    if (!s || end <= start || end > ft_strlen(s))
-        return (NULL);
-    len = end - start;
-    sub = malloc(len + 1);
-    if (!sub)
-        return (NULL);
-    i = 0;
-    while (start < end && s[start])
-        sub[i++] = s[start++];
-    sub[i] = '\0';
-    return (sub);
+	if (!s || end <= start || end > ft_strlen(s))
+		return (NULL);
+	len = end - start;
+	sub = malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	i = 0;
+	while (start < end && s[start])
+		sub[i++] = s[start++];
+	sub[i] = '\0';
+	return (sub);
 }

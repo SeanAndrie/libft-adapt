@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/25 14:48:59 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/10/01 00:49:17 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef enum e_error_type
 {
 	ERROR_SYNTAX,
 	ERROR_RUNTIME
-}		t_error_type;
+}					t_error_type;
 
 typedef struct s_list
 {
@@ -45,14 +45,14 @@ int					ft_isprint(int c);
 int					ft_tolower(int c);
 
 int					ft_atoi(const char *s);
-int 				ft_count_char(const char *str, char c);
 long				ft_strtol(const char *nptr, char **endptr, int base);
 
 int					ft_printf(const char *format, ...);
 int					ft_vprintf(const char *format, va_list ap);
 int					ft_dprintf(int fd, const char *format, ...);
 int					ft_vdprintf(int fd, const char *format, va_list ap);
-void				log_error(t_error_type type, const char *base, const char *format, ...);
+void				log_error(t_error_type type, const char *base,
+						const char *format, ...);
 
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);

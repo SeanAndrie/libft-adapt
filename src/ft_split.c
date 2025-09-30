@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 17:16:51 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/08 17:52:38 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/10/01 00:49:09 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

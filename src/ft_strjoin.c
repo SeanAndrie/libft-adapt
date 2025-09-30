@@ -30,4 +30,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	res[len1 + len2] = '\0';
 	return (res);
 }
-
