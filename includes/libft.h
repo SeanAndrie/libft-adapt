@@ -61,6 +61,7 @@ char				**ft_split(const char *s, int c);
 char				*ft_strtrim(const char *s, const char *set);
 char				*ft_strjoin(const char *s1, const char *s2);
 char				*ft_vstrjoin(unsigned int n, char *sep, ...);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_substr(const char *s, unsigned int start, size_t len);
