@@ -25,7 +25,8 @@
 typedef enum e_error_type
 {
 	ERROR_SYNTAX,
-	ERROR_RUNTIME
+	ERROR_RUNTIME,
+    ERROR_WARNING
 }					t_error_type;
 
 typedef struct s_list
