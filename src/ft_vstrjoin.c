@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 21:49:51 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/25 00:01:50 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:06:36 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_vstrjoin(unsigned int n, char *sep, ...)
 		str = va_arg(args, char *);
 		if (str)
 			ft_strlcat(res, str, len + 1);
-		if (sep && n > 0)
+		if (str && sep && n > 0)
 			ft_strlcat(res, sep, len + 1);
 	}
 	va_end(args);
