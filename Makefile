@@ -30,7 +30,7 @@ SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
 					$(STRTOL_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
 
 NON_LIBFT_FUNCS = ft_strtol.c ft_isalnum.c ft_printf.c ft_dprintf.c ft_vprintf.c ft_vdprintf.c \
-				  get_next_line.c ft_vstrjoin.c ft_tolower.c ft_substr_range.c ft_strcmp.c \
+				  get_next_line.c ft_vstrjoin.c ft_tolower.c ft_strcmp.c \
 				  ft_strstrip.c log_error.c
 
 SRCS = $(addprefix $(SRC_DIR)/, \
