@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-int	check_overflow(long res, char digit, int sign)
+static int	check_overflow(long res, char digit, int sign)
 {
 	if (res >= (INT_MAX / 10) || ((res >= (INT_MAX / 10)) && (digit - '0') > 7))
 	{
