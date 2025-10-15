@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/10/12 17:10:55 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/10/15 14:44:00 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 char                *ft_strstrip(const char *s, const char *set, char ***leftover);
+char                *get_next_line(int fd);
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t n, size_t size);
