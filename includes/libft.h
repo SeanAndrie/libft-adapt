@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/10/15 14:44:00 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/10/18 23:07:31 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int					ft_putstr_fd(char *s, int fd);
 int					ft_putendl_fd(char *s, int fd);
 
 size_t				ft_strlen(const char *s);
+size_t              ft_strcspn(const char *s1, const char *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
