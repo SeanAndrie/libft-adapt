@@ -12,18 +12,17 @@
 
 #include <libft.h>
 
-size_t  ft_strcspn(const char *s1, const char *s2)
+size_t	ft_strcspn(const char *s1, const char *s2)
 {
-    size_t  len;
+	size_t	len;
 
-    len = 0;
-    while (*s1)
-    {
-        if (ft_strchr(s2, *s1))
-            break;
-        len++;
-        s1++;
-    }
-    return (len);
+	len = 0;
+	while (*s1)
+	{
+		if (ft_strchr(s2, *s1))
+			break ;
+		len++;
+		s1++;
+	}
+	return (len);
 }
-

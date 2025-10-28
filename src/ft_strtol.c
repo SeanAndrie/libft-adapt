@@ -19,10 +19,10 @@ static inline void	set_endptr(char **endptr, const char *pos)
 		*endptr = (char *)pos;
 }
 
-static inline void skip_trailing_spaces(const char **nptr)
+static inline void	skip_trailing_spaces(const char **nptr)
 {
-    while (ft_isspace(**nptr))
-        (*nptr)++;
+	while (ft_isspace(**nptr))
+		(*nptr)++;
 }
 
 long	ft_strtol(const char *nptr, char **endptr, int base)
@@ -50,6 +50,6 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 		res = res * base + digit;
 		nptr++;
 	}
-    skip_trailing_spaces(&nptr);
+	skip_trailing_spaces(&nptr);
 	return (set_endptr(endptr, nptr), res * sign);
 }

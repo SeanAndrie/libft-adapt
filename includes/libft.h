@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/10/18 23:07:31 by sgadinga         ###   ########.fr       */
+/*   Updated: 2025/10/28 12:27:10 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef enum e_error_type
 	ERROR_SYNTAX,
 	ERROR_RUNTIME,
 	ERROR_WARNING,
-    ERROR_NONE
+	ERROR_NONE
 }					t_error_type;
 
 typedef struct s_list
@@ -70,8 +70,9 @@ char				*ft_substr(const char *s, unsigned int start, size_t len);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
-char                *ft_strstrip(const char *s, const char *set, char ***leftover);
-char                *get_next_line(int fd);
+char				*ft_strstrip(const char *s, const char *set,
+						char ***leftover);
+char				*get_next_line(int fd);
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t n, size_t size);
@@ -87,7 +88,7 @@ int					ft_putstr_fd(char *s, int fd);
 int					ft_putendl_fd(char *s, int fd);
 
 size_t				ft_strlen(const char *s);
-size_t              ft_strcspn(const char *s1, const char *s2);
+size_t				ft_strcspn(const char *s1, const char *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 

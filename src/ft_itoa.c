@@ -34,23 +34,23 @@ static size_t	count_digits(int n)
 
 char	*ft_itoa(int n)
 {
-    long    num;
+	long	num;
 	char	*res;
 	size_t	n_digits;
 
-    num = (long)n;
+	num = (long)n;
 	n_digits = count_digits(num);
 	res = ft_calloc(n_digits + 1, sizeof(char));
 	if (!res)
 		return (NULL);
 	res[n_digits] = '\0';
-    if (num == 0)
-        return (res[0] = '0', res);
-    if (num < 0)
-    {
-        res[0] = '-';
-        num = -num;
-    }
+	if (num == 0)
+		return (res[0] = '0', res);
+	if (num < 0)
+	{
+		res[0] = '-';
+		num = -num;
+	}
 	n_digits--;
 	while (num > 0)
 	{
