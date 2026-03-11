@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:45:21 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/10/28 12:25:34 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/11 00:23:59 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	log_error(t_error_type type, const char *base, const char *format, ...)
 	va_start(args, format);
 	if (base)
 		ft_dprintf(STDERR_FILENO, "%s: ", base);
-	if (type != ERROR_NONE)
+	if (type != ERR_NONE)
 	{
-		if (type == ERROR_SYNTAX)
+		if (type == ERR_SYNTAX)
 			ft_dprintf(STDERR_FILENO, "syntax error: ");
-		else if (type == ERROR_RUNTIME)
+		else if (type == ERR_RUNTIME)
 			ft_dprintf(STDERR_FILENO, "runtime error: ");
-		else if (type == ERROR_WARNING)
+		else if (type == ERR_WARNING)
 			ft_dprintf(STDERR_FILENO, "warning: ");
 	}
 	ft_vdprintf(STDERR_FILENO, format, args);

@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/10/28 12:27:10 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/11 00:26:06 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 
 typedef enum e_error_type
 {
-	ERROR_SYNTAX,
-	ERROR_RUNTIME,
-	ERROR_WARNING,
-	ERROR_NONE
+	ERR_RUNTIME,
+	ERR_SYNTAX,
+	ERR_WARNING,
+	ERR_NONE
 }					t_error_type;
 
 typedef struct s_list
@@ -59,6 +59,7 @@ void				log_error(t_error_type type, const char *base,
 char				*ft_itoa(int n);
 char				*ft_strdup(const char *src);
 char				*ft_strchr(const char *s, int c);
+char				*ft_strrchr(const char *s, int c);
 char				**ft_split(const char *s, int c);
 char				*ft_strtrim(const char *s, const char *set);
 char				*ft_strjoin(const char *s1, const char *s2);
