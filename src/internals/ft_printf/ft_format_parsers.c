@@ -6,11 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:48:31 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 21:06:12 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 02:22:12 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_printf.h>
 
 void	ft_parse_flags(const char **format, t_formatspec *fs)
 {

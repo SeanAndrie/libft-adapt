@@ -6,12 +6,12 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 15:30:41 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/18 20:28:33 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 02:29:40 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "internals/ft_strtol/ft_strtol.h"
 #include <libft.h>
+#include <internals/ft_strtol.h>
 
 static inline void	set_endptr(char **endptr, const char *pos)
 {

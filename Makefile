@@ -6,13 +6,13 @@
 #    By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 23:33:41 by sgadinga          #+#    #+#              #
-#    Updated: 2025/10/18 23:08:23 by sgadinga         ###   ########.fr        #
+#    Updated: 2026/03/12 02:23:41 by sgadinga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -Iincludes
+CFLAGS = -Wall -Werror -Wextra -Iincludes -Iincludes/internals
 ARCHIVE = ar rcs
 
 SRC_DIR = src

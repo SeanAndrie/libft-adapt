@@ -6,11 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 21:20:22 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/07 23:26:11 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 02:22:42 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_printf.h>
 
 static int	ft_parse_by_spec(t_formatspec *fs, va_list args)
 {

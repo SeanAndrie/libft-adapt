@@ -6,12 +6,12 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 21:30:55 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/09/07 23:43:35 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 02:24:57 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "internals/ft_printf/ft_printf.h"
 #include <libft.h>
+#include <internals/ft_printf.h>
 
 int	ft_dprintf(int fd, const char *format, ...)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <internals/get_next_line.h>
 
 void	clear_list(t_node **head)
 {
