@@ -25,6 +25,29 @@ void	clear_list(t_node **head)
 	}
 }
 
+char	*ft_strdup_len(const char *s, size_t *len)
+{
+	size_t	i;
+	char	*dup;
+
+	if (!s)
+		return (NULL);
+	*len = 0;
+	while (s[*len])
+		(*len)++;
+	dup = malloc(*len + 1);
+	if (!dup)
+		return (NULL);
+	dup[*len] = '\0';
+	i = 0;
+	while (i < *len)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	return (dup);
+}
+
 void	append_node(t_node **head, char *buffer)
 {
 	t_node	*node;
@@ -34,8 +57,7 @@ void	append_node(t_node **head, char *buffer)
 	node = malloc(sizeof(t_node));
 	if (!node)
 		return ;
-	node->buffer = ft_strdup(buffer);
-    len = ft_strlen(buffer);
+	node->buffer = ft_strdup_len(buffer, &len);
 	if (!node->buffer)
 	{
 		free(node);
@@ -58,6 +80,7 @@ void	update_remainder(t_node **head)
 {
 	t_node	*next;
 	char	*remain;
+	size_t	len;
 
 	while ((*head)->next)
 	{
@@ -69,7 +92,7 @@ void	update_remainder(t_node **head)
 	remain = ft_strchr((*head)->buffer, '\n');
 	if (remain)
 	{
-		remain = ft_strdup(remain);
+		remain = ft_strdup_len(remain + 1, &len);
 		clear_list(head);
 		if (remain[0] != '\0')
 			append_node(head, remain);
