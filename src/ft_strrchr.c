@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:00:16 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/06/06 18:05:23 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/11 01:33:27 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last;
+	size_t i;
 
-	while (*s)
+	i = ft_strlen(s) - 1;
+	while (i > 0)
 	{
-		if (*s == (char)c)
-			last = *s;
-		s++;
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i--;
 	}
-	if (*s == '\0')
-		return ((char *)s);
 	return (NULL);
 }
