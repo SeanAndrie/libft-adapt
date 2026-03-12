@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 15:30:41 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 03:54:12 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:49:52 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,6 @@ int	handle_base_prefix(const char **nptr, int base)
 		&& ft_tolower(*(*nptr + 1)) == 'x')
 		(*nptr) += 2;
 	return (base);
-}
-
-static inline void	skip_trailing_spaces(const char **nptr)
-{
-	while (ft_isspace(**nptr))
-		(*nptr)++;
 }
 
 static long	check_overflow(long res, int digit, int base, int sign)
@@ -80,7 +74,7 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 			return (set_endptr(endptr, nptr), errno = ERANGE, overflow);
 		res = res * base + digit;
 		nptr++;
+        set_endptr(endptr, nptr);
 	}
-	skip_trailing_spaces(&nptr);
-	return (set_endptr(endptr, nptr), res * sign);
+	return (res * sign);
 }

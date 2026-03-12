@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 03:33:02 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 12:13:38 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 13:50:10 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	convert_to_value(char c, int base)
 	if (ft_isdigit(c))
 		value = c - '0';
 	else if (ft_isalpha(c))
-	    value = ft_tolower(c) - 'a' + 10;
+		value = ft_tolower(c) - 'a' + 10;
+	else
+		return (-1);
 	if (value >= base)
 		return (-1);
 	return (value);
