@@ -40,14 +40,17 @@ int	handle_base_prefix(const char **nptr, int base)
 
 static long	check_overflow(long res, int digit, int base, int sign)
 {
-	if (res > ((LONG_MAX - digit) / base))
-	{
-		if (sign == 1)
-			return (LONG_MAX);
-		else
-			return (LONG_MIN);
-	}
-	return (0);
+    if (sign == 1 && res > (LONG_MAX - digit) / base)
+    {
+        errno = ERANGE;
+        return (LONG_MAX);
+    }
+    if (sign == -1 && res > -(LONG_MIN + digit) / base)
+    {
+        errno = ERANGE;
+        return (LONG_MIN);
+    }
+    return (0);
 }
 
 long	ft_strtol(const char *nptr, char **endptr, int base)
