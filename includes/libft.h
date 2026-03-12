@@ -47,6 +47,8 @@ int					ft_isprint(int c);
 int					ft_tolower(int c);
 
 int					ft_atoi(const char *s);
+
+float               ft_strtof(const char *nptr, char **endptr);
 double              ft_strtod(const char *nptr, char **endptr);
 long				ft_strtol(const char *nptr, char **endptr, int base);
 

@@ -33,7 +33,7 @@ GNL_UTILS = get_next_line/get_next_line_utils.c
 SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
 					$(STRTO_COMMON_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
 
-NON_LIBFT_FUNCS = ft_strtol.c ft_strtod.c ft_isalnum.c ft_printf.c ft_dprintf.c ft_vprintf.c ft_vdprintf.c \
+NON_LIBFT_FUNCS = ft_strtol.c ft_strtod.c ft_strtof.c ft_isalnum.c ft_printf.c ft_dprintf.c ft_vprintf.c ft_vdprintf.c \
 					get_next_line.c ft_strncasecmp.c ft_vstrjoin.c ft_toupper.c ft_tolower.c ft_strcmp.c \
 					ft_strstrip.c ft_strcspn.c log_error.c
 
