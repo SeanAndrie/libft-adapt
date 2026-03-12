@@ -6,10 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:15:54 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/08/13 17:27:40 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 03:48:58 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <internals/get_next_line.h>
 
 void	clear_list(t_node **head)

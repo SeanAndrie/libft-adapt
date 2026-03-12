@@ -6,15 +6,12 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:12:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 02:31:22 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 03:48:42 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
-# include <fcntl.h>
-# include <libft.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

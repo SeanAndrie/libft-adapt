@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtol.h                                        :+:      :+:    :+:   */
+/*   ft_strncasecamp.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 16:08:44 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 02:27:33 by sgadinga         ###   ########.fr       */
+/*   Created: 2026/03/12 12:04:01 by sgadinga          #+#    #+#             */
+/*   Updated: 2026/03/12 12:10:00 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRTOL_H
-# define FT_STRTOL_H
+#include <libft.h>
 
-# include <errno.h>
-# include <libft.h>
+int ft_strncasecmp(const char *s1, const char *s2, size_t n)
+{
+    unsigned char c1;
+    unsigned char c2;
 
-void	skip_whitespace_and_sign(const char **nptr, int *sign);
-int		handle_base_prefix(const char **nptr, int base);
-int		convert_to_value(char c, int base);
-long	check_overflow(long res, int digit, int base, int sign);
-
-#endif
+    while (n--)
+    {
+        c1 = ft_tolower(*(s1++));
+        c2 = ft_tolower(*(s2++));
+        if (c1 != c2)
+            return (c1 - c2);
+        if (c1 == '\0')
+            return (0);
+    }
+    return (0);
+}

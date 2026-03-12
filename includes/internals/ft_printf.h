@@ -6,14 +6,14 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:43:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 02:21:01 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/12 03:50:34 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <libft.h>
+#include <libft.h>
 
 # if defined(__linux__)
 #  define NULLPTR "(nil)"

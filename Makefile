@@ -6,7 +6,7 @@
 #    By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 23:33:41 by sgadinga          #+#    #+#              #
-#    Updated: 2026/03/12 02:45:46 by sgadinga         ###   ########.fr        #
+#    Updated: 2026/03/12 13:11:23 by sgadinga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,19 +19,23 @@ SRC_DIR = src
 OBJ_DIR = obj
 INTERNALS_DIR = internals
 
-STRTOL_UTILS = ft_strtol/ft_strtol_utils.c
+STRTO_COMMON_UTILS = $(addprefix ft_strto_common/, \
+					 	skip_whitespace_and_sign.c convert_to_value.c set_endptr.c \
+						parse_digits.c parse_fraction.c parse_exponent.c try_special.c)
+
 PRINTF_UTILS = $(addprefix ft_printf/, \
-				 ft_format_parsers.c ft_format_spec.c ft_format_utils.c \
-				 ft_print_char.c ft_print_dec_int.c ft_print_hex.c \
-				 ft_print_str.c ft_print_uint.c ft_parsing.c)
+					ft_format_parsers.c ft_format_spec.c ft_format_utils.c \
+				 	ft_print_char.c ft_print_dec_int.c ft_print_hex.c \
+				 	ft_print_str.c ft_print_uint.c ft_parsing.c)
+
 GNL_UTILS = get_next_line/get_next_line_utils.c
 
 SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
-					$(STRTOL_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
+					$(STRTO_COMMON_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
 
-NON_LIBFT_FUNCS = ft_strtol.c ft_isalnum.c ft_printf.c ft_dprintf.c ft_vprintf.c ft_vdprintf.c \
-				  get_next_line.c ft_vstrjoin.c ft_tolower.c ft_strcmp.c \
-				  ft_strstrip.c ft_strcspn.c log_error.c
+NON_LIBFT_FUNCS = ft_strtol.c ft_strtod.c ft_isalnum.c ft_printf.c ft_dprintf.c ft_vprintf.c ft_vdprintf.c \
+					get_next_line.c ft_strncasecmp.c ft_vstrjoin.c ft_toupper.c ft_tolower.c ft_strcmp.c \
+					ft_strstrip.c ft_strcspn.c log_error.c
 
 SRCS = $(addprefix $(SRC_DIR)/, \
 		 ft_isalpha.c ft_isdigit.c ft_islower.c ft_isupper.c ft_isspace.c \
