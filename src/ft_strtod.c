@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 03:03:57 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 13:13:44 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/19 10:37:53 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ static double	return_with_endptr(char **endptr, const char *nptr,
 	return (value);
 }
 
-static double   apply_exponent(double res, int exp, int sign)
+static double	apply_exponent(double res, int exp, int sign)
 {
-    res = res * pow(10.0, exp);
-    if (isinf(res))
-    {
-        errno = ERANGE;
-        return (sign * HUGE_VAL);
-    }
-    if (res == 0.0)
-        errno = ERANGE;
-    return (sign * res);
+	res = res * pow(10.0, exp);
+	if (isinf(res))
+	{
+		errno = ERANGE;
+		return (sign * HUGE_VAL);
+	}
+	if (res == 0.0)
+		errno = ERANGE;
+	return (sign * res);
 }
 
 static int	parse_nptr(const char **nptr, double *res, int sign)

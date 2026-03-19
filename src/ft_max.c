@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_endptr.c                                       :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 03:35:22 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/19 10:39:06 by sgadinga         ###   ########.fr       */
+/*   Created: 2026/03/19 10:34:19 by sgadinga          #+#    #+#             */
+/*   Updated: 2026/03/19 10:35:23 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <internals/ft_strto_common.h>
 
-void	set_endptr(char **endptr, const char *pos)
+int	ft_max(const int a, const int b)
 {
-	if (endptr)
-		*endptr = (char *)pos;
+	if (a > b)
+		return (a);
+	return (b);
 }
