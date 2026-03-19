@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 12:10:38 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/03/19 11:36:50 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int					ft_isprint(int c);
 int					ft_tolower(int c);
 
 int					ft_atoi(const char *s);
+int                 ft_max(const int a, const int b);
+int                 ft_min(const int a, const int b);
 
 float               ft_strtof(const char *nptr, char **endptr);
 double              ft_strtod(const char *nptr, char **endptr);
