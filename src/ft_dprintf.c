@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_printf.h>
+#include <libft.h>
 
 int	ft_dprintf(int fd, const char *format, ...)
 {

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <float.h>
 #include <internals/ft_strto_common.h>
 
 int	parse_digits(const char **nptr, double *res, int *has_digits)

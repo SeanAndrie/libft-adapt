@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <internals/ft_strto_common.h>
+#include <internals/ft_strto.h>
 
 int	convert_to_value(char c, int base)
 {

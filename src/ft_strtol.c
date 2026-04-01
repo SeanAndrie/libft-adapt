@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <errno.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 int	handle_base_prefix(const char **nptr, int base)
 {
@@ -40,17 +40,17 @@ int	handle_base_prefix(const char **nptr, int base)
 
 static long	check_overflow(long res, int digit, int base, int sign)
 {
-    if (sign == 1 && res > (LONG_MAX - digit) / base)
-    {
-        errno = ERANGE;
-        return (LONG_MAX);
-    }
-    if (sign == -1 && res > -(LONG_MIN + digit) / base)
-    {
-        errno = ERANGE;
-        return (LONG_MIN);
-    }
-    return (0);
+	if (sign == 1 && res > (LONG_MAX - digit) / base)
+	{
+		errno = ERANGE;
+		return (LONG_MAX);
+	}
+	if (sign == -1 && res > -(LONG_MIN + digit) / base)
+	{
+		errno = ERANGE;
+		return (LONG_MIN);
+	}
+	return (0);
 }
 
 long	ft_strtol(const char *nptr, char **endptr, int base)
@@ -77,7 +77,7 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 			return (set_endptr(endptr, nptr), errno = ERANGE, overflow);
 		res = res * base + digit;
 		nptr++;
-        set_endptr(endptr, nptr);
+		set_endptr(endptr, nptr);
 	}
 	return (res * sign);
 }

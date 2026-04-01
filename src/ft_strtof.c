@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 float	ft_strtof(const char *nptr, char **endptr)
 {

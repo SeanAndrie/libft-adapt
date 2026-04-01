@@ -50,8 +50,8 @@ int					ft_atoi(const char *s);
 int                 ft_max(const int a, const int b);
 int                 ft_min(const int a, const int b);
 
-float               ft_strtof(const char *nptr, char **endptr);
-double              ft_strtod(const char *nptr, char **endptr);
+float				ft_strtof(const char *nptr, char **endptr);
+double				ft_strtod(const char *nptr, char **endptr);
 long				ft_strtol(const char *nptr, char **endptr, int base);
 
 int					ft_printf(const char *format, ...);
@@ -97,7 +97,7 @@ size_t				ft_strlen(const char *s);
 size_t				ft_strcspn(const char *s1, const char *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
-int                 ft_strncasecmp(const char *s1, const char *s2, size_t n);
+int					ft_strncasecmp(const char *s1, const char *s2, size_t n);
 
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);

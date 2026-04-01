@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_printf.h>
+#include <libft.h>
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {

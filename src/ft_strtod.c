@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 static double	return_with_endptr(char **endptr, const char *nptr,
 		double value)

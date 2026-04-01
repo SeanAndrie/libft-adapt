@@ -19,7 +19,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 INTERNALS_DIR = internals
 
-STRTO_COMMON_UTILS = $(addprefix ft_strto_common/, \
+STRTO_COMMON_UTILS_UTILS = $(addprefix ft_strto_common/, \
 					 	skip_whitespace_and_sign.c convert_to_value.c set_endptr.c \
 						parse_digits.c parse_fraction.c parse_exponent.c try_special.c)
 

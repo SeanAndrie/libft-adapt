@@ -10,20 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRTO_COMMON
-# define FT_STRTO_COMMON
+#ifndef FT_STRTO_COMMON_H
+# define FT_STRTO_COMMON_H
 
-#include <math.h>
-#include <float.h>
-#include <errno.h>
+# include <errno.h>
+# include <math.h>
 
-void	    set_endptr(char **endptr, const char *pos);
-void		skip_whitespace_and_sign(const char **nptr, int *sign);
+# define FLT_MAX 3.402823466e+38F
+# define FLT_MIN 1.17549435E-38F
 
-int			convert_to_value(char c, int base);
-int         parse_exponent(const char **nptr, int *exp);
-int         parse_digits(const char **nptr, double *res, int *has_digits);
-int         parse_fraction(const char **nptr, double *res, int *has_digits);
-int         try_special(const char **nptr, char **endptr, int sign, double *special);
+void	set_endptr(char **endptr, const char *pos);
+void	skip_whitespace_and_sign(const char **nptr, int *sign);
+
+int		convert_to_value(char c, int base);
+int		parse_exponent(const char **nptr, int *exp);
+int		parse_digits(const char **nptr, double *res, int *has_digits);
+int		parse_fraction(const char **nptr, double *res, int *has_digits);
+int		try_special(const char **nptr, char **endptr, int sign,
+			double *special);
 
 #endif
