@@ -37,8 +37,8 @@ typedef struct s_formatspec
 int				ft_parse_format(int fd, const char *format, va_list args);
 
 // ft_format_spec
-int				ft_isflag(int c);
-int				ft_isspec(int c);
+t_bool			ft_isflag(int c);
+t_bool			ft_isspec(int c);
 t_formatspec	*ft_create_fs(const char **format, int fd);
 
 // ft_format_parsers

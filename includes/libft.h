@@ -30,25 +30,31 @@ typedef enum e_error_type
 	ERR_NONE
 }					t_error_type;
 
+typedef enum s_bool
+{
+	TRUE = 1,
+	FALSE = 0
+}					t_bool;
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-int					ft_isascii(int c);
-int					ft_isdigit(int c);
-int					ft_isalnum(int c);
-int					ft_isalpha(int c);
-int					ft_isupper(int c);
-int					ft_islower(int c);
-int					ft_isspace(int c);
-int					ft_isprint(int c);
+t_bool				ft_isascii(int c);
+t_bool				ft_isdigit(int c);
+t_bool				ft_isalnum(int c);
+t_bool				ft_isalpha(int c);
+t_bool				ft_isupper(int c);
+t_bool				ft_islower(int c);
+t_bool				ft_isspace(int c);
+t_bool				ft_isprint(int c);
 int					ft_tolower(int c);
 
 int					ft_atoi(const char *s);
-int                 ft_max(const int a, const int b);
-int                 ft_min(const int a, const int b);
+int					ft_max(const int a, const int b);
+int					ft_min(const int a, const int b);
 
 float				ft_strtof(const char *nptr, char **endptr);
 double				ft_strtod(const char *nptr, char **endptr);

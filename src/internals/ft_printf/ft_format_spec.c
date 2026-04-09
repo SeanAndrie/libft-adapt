@@ -12,15 +12,15 @@
 
 #include <ft_printf.h>
 
-int	ft_isflag(int c)
+t_bool	ft_isflag(int c)
 {
-	return (c == '-' || c == '+' || c == '0' || c == ' ' || c == '#');
+	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') * TRUE);
 }
 
-int	ft_isspec(int c)
+t_bool	ft_isspec(int c)
 {
-	return (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u'
-		|| c == 'x' || c == 'X' || c == '%');
+	return ((c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u'
+		|| c == 'x' || c == 'X' || c == '%') * TRUE);
 }
 
 static void	ft_apply_flag_precedence(t_formatspec *fs)
