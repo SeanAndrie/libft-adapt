@@ -30,7 +30,7 @@ typedef enum e_error_type
 	ERR_NONE
 }					t_error_type;
 
-typedef enum s_bool
+typedef enum e_bool
 {
 	TRUE = 1,
 	FALSE = 0
