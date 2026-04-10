@@ -19,7 +19,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 INTERNALS_DIR = internals
 
-STRTO_COMMON_UTILS_UTILS = $(addprefix ft_strto_common/, \
+STRTO_COMMON = $(addprefix ft_strto_common/, \
 					 	skip_whitespace_and_sign.c convert_to_value.c set_endptr.c \
 						parse_digits.c parse_fraction.c parse_exponent.c try_special.c)
 
@@ -31,7 +31,7 @@ PRINTF_UTILS = $(addprefix ft_printf/, \
 GNL_UTILS = get_next_line/get_next_line_utils.c
 
 SRC_W_INTERNALS = $(addprefix $(INTERNALS_DIR)/, \
-					$(STRTO_COMMON_UTILS) $(PRINTF_UTILS) $(GNL_UTILS))
+					$(STRTO_COMMON) $(PRINTF_UTILS) $(GNL_UTILS))
 
 NON_LIBFT_FUNCS = ft_strtol.c ft_strtod.c ft_strtof.c ft_isalnum.c ft_printf.c ft_dprintf.c ft_vprintf.c ft_vdprintf.c \
 					get_next_line.c ft_strncasecmp.c ft_vstrjoin.c ft_toupper.c ft_tolower.c ft_strcmp.c \

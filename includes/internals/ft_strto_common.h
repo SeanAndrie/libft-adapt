@@ -16,8 +16,12 @@
 # include <errno.h>
 # include <math.h>
 
-# define FLT_MAX 3.402823466e+38F
-# define FLT_MIN 1.17549435E-38F
+# ifndef FLT_MAX
+#  define FLT_MAX 3.402823466e+38F
+# endif
+# ifndef FLT_MIN
+#  define FLT_MIN 1.17549435E-38F
+# endif
 
 void	set_endptr(char **endptr, const char *pos);
 void	skip_whitespace_and_sign(const char **nptr, int *sign);
