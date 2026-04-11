@@ -6,10 +6,11 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 12:33:48 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/04/12 01:29:36 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/12 01:47:41 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <internals/ft_strto_common.h>
 
 int	parse_digits(const char **nptr, double *res, int *has_digits)

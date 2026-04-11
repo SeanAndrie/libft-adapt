@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 23:41:27 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/19 11:36:50 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/12 01:48:21 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@
 # define STDIN_FILENO 0
 # define STDOUT_FILENO 1
 # define STDERR_FILENO 2
+
+# ifndef FLT_MAX
+#  define FLT_MAX 3.402823466e+38F
+# endif
+# ifndef FLT_MIN
+#  define FLT_MIN 1.17549435E-38F
+# endif
+# ifndef DBL_MAX
+#  define DBL_MAX 1.79769e+308
+# endif
 
 typedef enum e_error_type
 {
