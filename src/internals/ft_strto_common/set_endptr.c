@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 void	set_endptr(char **endptr, const char *pos)
 {

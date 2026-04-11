@@ -6,13 +6,12 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 03:33:02 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/19 10:38:32 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/12 01:29:30 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <float.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 int	convert_to_value(char c, int base)
 {

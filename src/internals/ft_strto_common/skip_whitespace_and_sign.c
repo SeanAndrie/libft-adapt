@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 void	skip_whitespace_and_sign(const char **nptr, int *sign)
 {

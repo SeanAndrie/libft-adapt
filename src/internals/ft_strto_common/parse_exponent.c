@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <internals/ft_strto_common.h>
+#include <libft.h>
 
 int	parse_exponent(const char **nptr, int *exp)
 {
