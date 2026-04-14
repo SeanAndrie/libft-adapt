@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:43:30 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 03:50:34 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/14 13:51:35 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ int				ft_parse_uint(t_formatspec *fs, unsigned int n);
 char			*ft_get_base(t_formatspec *fs);
 char			*ft_gethex_str(unsigned long n, char *base);
 int				ft_parse_hex(t_formatspec *fs, void *ptr);
+
+// ft_print_float
+int				ft_parse_float(t_formatspec *fs, double n);
 
 #endif

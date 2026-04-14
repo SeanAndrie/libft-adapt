@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 16:46:31 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 02:22:11 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/14 13:57:11 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 t_bool	ft_isflag(int c)
 {
-	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') * TRUE);
+	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#'));
 }
 
 t_bool	ft_isspec(int c)
 {
 	return ((c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
-			|| c == 'u' || c == 'x' || c == 'X' || c == '%') * TRUE);
+			|| c == 'u' || c == 'x' || c == 'X' || c == '%' || c == 'f'));
 }
 
 static void	ft_apply_flag_precedence(t_formatspec *fs)
@@ -29,7 +29,7 @@ static void	ft_apply_flag_precedence(t_formatspec *fs)
 		ft_remove_flag(fs, '0');
 	if (ft_strchr(fs->flags, '+'))
 		ft_remove_flag(fs, ' ');
-	if (fs->precision >= 0 && ft_strchr("diuxX", fs->specifier))
+	if (fs->precision >= 0 && ft_strchr("diufxX", fs->specifier))
 		ft_remove_flag(fs, '0');
 }
 
@@ -68,5 +68,7 @@ t_formatspec	*ft_create_fs(const char **format, int fd)
 		free(fs);
 		return (NULL);
 	}
+	if (fs->specifier == 'f' && fs->precision == -1)
+		fs->precision = 6;
 	return (fs);
 }

@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 21:20:22 by sgadinga          #+#    #+#             */
-/*   Updated: 2026/03/12 02:22:42 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/14 13:55:26 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static int	ft_parse_by_spec(t_formatspec *fs, va_list args)
 		len = ft_parse_uint(fs, va_arg(args, unsigned int));
 	else if (fs->specifier == 'x' || fs->specifier == 'X')
 		len = ft_parse_hex(fs, va_arg(args, void *));
+	else if (fs->specifier == 'f')
+		len = ft_parse_float(fs, va_arg(args, double));
 	else
 		len = ft_putchar_fd(fs->specifier, fs->fd);
 	return (len);

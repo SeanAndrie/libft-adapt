@@ -6,7 +6,7 @@
 #    By: sgadinga <sgadinga@student.42.abudhabi.ae> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 23:33:41 by sgadinga          #+#    #+#              #
-#    Updated: 2026/04/12 01:28:23 by sgadinga         ###   ########.fr        #
+#    Updated: 2026/04/14 13:51:18 by sgadinga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ STRTO_COMMON = $(addprefix ft_strto_common/, \
 
 PRINTF_UTILS = $(addprefix ft_printf/, \
 					ft_format_parsers.c ft_format_spec.c ft_format_utils.c \
-				 	ft_print_char.c ft_print_dec_int.c ft_print_hex.c \
+				 	ft_print_char.c ft_print_dec_int.c ft_print_hex.c ft_print_float.c \
 				 	ft_print_str.c ft_print_uint.c ft_parsing.c)
 
 GNL_UTILS = get_next_line/get_next_line_utils.c
