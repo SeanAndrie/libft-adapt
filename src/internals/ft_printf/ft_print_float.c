@@ -73,8 +73,7 @@ static int	ft_pad_and_justify(t_formatspec *fs, double n, int frac_part,
 		len += ft_right_justify(fs, &total_len);
 	if (!ft_strchr(fs->flags, '0') || ft_strchr(fs->flags, '-'))
 		len += ft_apply_sign(fs, n);
-	len += ft_parse_dec_int(&(t_formatspec){fs->fd, "\0", 0, -1, 'd'},
-			frac_part);
+	len += ft_parse_dec_int(&(t_formatspec){fs->fd, "\0", 0, -1, 'd'}, (int)n);
 	if (precision > 0)
 	{
 		len += ft_putchar_fd('.', fs->fd);
