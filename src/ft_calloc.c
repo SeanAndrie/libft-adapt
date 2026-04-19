@@ -6,7 +6,7 @@
 /*   By: sgadinga <sgadinga@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 00:20:25 by sgadinga          #+#    #+#             */
-/*   Updated: 2025/05/30 00:41:27 by sgadinga         ###   ########.fr       */
+/*   Updated: 2026/04/19 20:31:17 by sgadinga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*res;
 
-	if (!n || !size)
+	if (!n || size == 0)
 		return (malloc(0));
 	if (size != 0 && n > __SIZE_MAX__ / size)
 		return (NULL);
