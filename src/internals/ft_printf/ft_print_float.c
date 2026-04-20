@@ -45,15 +45,25 @@ static int	ft_float_total_len(t_formatspec *fs, double n, int precision)
 	return (total);
 }
 
-static int	ft_apply_sign(t_formatspec *fs, double n)
+static int	ft_print_int_part(t_formatspec *fs, double n)
 {
+	t_formatspec	int_fs;
+
+	int_fs.fd = fs->fd;
+	int_fs.flags[0] = '\0';
+	int_fs.width = 0;
+	int_fs.precision = -1;
+	int_fs.specifier = 'd';
+	if (n == (double)INT_MIN)
+		return (ft_parse_dec_int(&int_fs, INT_MIN));
 	if (n < 0)
-		return (ft_putchar_fd('-', fs->fd));
+		return (ft_putchar_fd('-', fs->fd) + ft_parse_dec_int(&int_fs,
+				(int)-n));
 	if (ft_strchr(fs->flags, '+'))
-		return (ft_putchar_fd('+', fs->fd));
+		return (ft_putchar_fd('+', fs->fd) + ft_parse_dec_int(&int_fs, (int)n));
 	if (ft_strchr(fs->flags, ' '))
-		return (ft_putchar_fd(' ', fs->fd));
-	return (0);
+		return (ft_putchar_fd(' ', fs->fd) + ft_parse_dec_int(&int_fs, (int)n));
+	return (ft_parse_dec_int(&int_fs, (int)n));
 }
 
 static int	ft_pad_and_justify(t_formatspec *fs, double n, int frac_part,
@@ -66,20 +76,18 @@ static int	ft_pad_and_justify(t_formatspec *fs, double n, int frac_part,
 	len = 0;
 	if (ft_strchr(fs->flags, '0') && !ft_strchr(fs->flags, '-'))
 	{
-		len += ft_apply_sign(fs, n);
+		len += ft_print_int_part(fs, n);
 		len += ft_width_padding(fs->width, total_len, '0', fs->fd);
 	}
 	else
-		len += ft_right_justify(fs, &total_len);
-	if (!ft_strchr(fs->flags, '0') || ft_strchr(fs->flags, '-'))
-		len += ft_apply_sign(fs, n);
-	len += ft_parse_dec_int(&(t_formatspec){fs->fd, "\0", 0, -1, 'd'}, (int)fabs(n));
-	if (precision > 0)
 	{
-		len += ft_putchar_fd('.', fs->fd);
-		len += ft_parse_dec_int(&(t_formatspec){fs->fd, "\0", 0, precision,
-				'd'}, frac_part);
+		len += ft_right_justify(fs, &total_len);
+		len += ft_print_int_part(fs, n);
 	}
+	if (precision > 0)
+		len += ft_putchar_fd('.', fs->fd)
+			+ ft_parse_dec_int(&(t_formatspec){fs->fd, "\0", 0, precision, 'd'},
+				frac_part);
 	len += ft_left_justify(fs, &total_len);
 	return (len);
 }
